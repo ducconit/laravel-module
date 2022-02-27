@@ -1,0 +1,47 @@
+{
+  "name": "dnt/laravel-module",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "DNT\\Module\\": "src/"
+    },
+    "files": [
+      "./src/helpers.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Ducnt",
+      "email": "ducconit@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^8.1",
+    "illuminate/support": "^v9.1",
+    "dnt/json": "dev-master",
+    "illuminate/filesystem": "v9.x"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "v9.5"
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DNT\\Module\\Providers\\BootstrapServiceProvider"
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../*",
+      "options": {
+        "symlink": true
+      }
+    }
+  ]
+}
