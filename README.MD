@@ -24,6 +24,12 @@ composer require dnt/laravel-module
   "files": [
     "file path"
   ],
+  "views": [
+    "./views"
+  ],
+  "langs": [
+    "./lang"
+  ],
   "enable": true
 }
 ```
@@ -42,6 +48,12 @@ composer require dnt/laravel-module
 |-----------Cart.php
 |-------Providers
 |-----------CartManagerServiceProvider.php
+|-------views
+|------------index.blade.php
+|-------lang
+|------------en
+|----------------validation.php
+|------------en.json
 |-------helpers.php
 |-------module.json
 ...
@@ -61,6 +73,12 @@ composer require dnt/laravel-module
   },
   "files": [
     "./helpers.php"
+  ],
+  "views": [
+    "./views"
+  ],
+  "langs": [
+    "./lang"
   ],
   "enable": true
 }
