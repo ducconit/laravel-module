@@ -7,7 +7,7 @@ use DNT\Module\Contracts\Module as ModuleContract;
 use DNt\Module\Contracts\ModuleLoader;
 use DNT\Module\Enums\ModuleStatus;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
 
 class Module implements ModuleContract
@@ -87,10 +87,12 @@ class Module implements ModuleContract
 		return $this->get('files', []);
 	}
 
-	public function getPath(): string
+	public function getPath(string $path = null): string
 	{
-		return dirname($this->path);
+		$dir = dirname($this->path);
+		return $path ? Str::finish($dir, DIRECTORY_SEPARATOR) . $path : $dir;
 	}
+
 	public function getFileInfo(): string
 	{
 		return $this->path;

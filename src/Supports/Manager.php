@@ -101,11 +101,16 @@ class Manager implements Management
 			/**
 			 * Register namespace view module
 			 */
-			$this->_container->make('view')->addNamespace($module->getKey(), $module->getViewPaths());
+			foreach ($module->getViewPaths() as $path) {
+				$this->_container->make('view')->addNamespace($module->getKey(), $module->getPath($path));
+			}
 			/**
 			 * Register namespace translate
 			 */
-			$this->_container->make('translator')->addNamespace($module->getKey(), $module->getLangPaths());
+			foreach ($module->getLangPaths() as $path) {
+				$this->_container->make('translator')->addNamespace($module->getKey(), $module->getPath($path));
+				$this->_container->make('translator')->addJsonPath($module->getPath($path));
+			}
 			/**
 			 * dispatch event boot
 			 */
