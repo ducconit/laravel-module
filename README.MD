@@ -99,7 +99,7 @@ app(\DNT\Module\Contracts\Management::class)->enable('cart-manager');
 ```
 - disable module
 ```php
-app(\DNT\Module\Contracts\Management::class)->enable('cart-manager');
+app(\DNT\Module\Contracts\Management::class)->disable('cart-manager');
 ```
 - get view
 ```php
